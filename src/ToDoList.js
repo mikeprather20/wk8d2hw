@@ -7,32 +7,32 @@ export default class ToDoList extends Component {
     super();
     this.state = {
       todos: {
-        todo : []
+        todo: []
       }
     }
   };
 
-  componentDidMount = async () => {
-
+  componentDidMount = async (getInput) => {
+    this.setState({ todos: getInput })
   };
 
 
   showCard = () => {
-    this.state.todos.map((todos) => {
-      return
-      <div>
-        <div className="card" style={{ width: "50rem" }}>
-          <div className="card-body">
-            <p className="card-text">{this.todos}</p>
-            <input placeholder='Your To Do Here' />
-            <button onClick={() => { this.setState({ done: true }) }}>Done</button>
-            <a href="/Todos" className="btn btn-primary">Clear To Do</a>
+    this.state.todos.map(todos => {
+      return (
+        <div>
+          <div className="card" style={{ width: "50rem" }}>
+            <div className="card-body">
+              <p className="card-text">{this.todos}</p>
+              <input placeholder='Your To Do Here' />
+              <button onClick={() => { this.setState({ done: true }) }}>Done</button>
+              <a href="/Todos" className="btn btn-primary">Clear To Do</a>
+            </div>
           </div>
         </div>
-      </div>
-    })
-  };
-
+      )
+    });
+  }
   getInput = (e) => {
     e.preventDefault()
     const userInput = e.target.userinput.value;
@@ -100,9 +100,9 @@ export default class ToDoList extends Component {
 //     this.setState({ todos:input })
 //   };
 
-//   search = (e)=>{
+//   user = (e)=>{
 //     e.preventDefault()
-//     const input = e.target.search.value;
+//     const input = e.target.user.value;
 //     this.getInput(input)
 //   };
 
@@ -113,7 +113,7 @@ export default class ToDoList extends Component {
 //       <div>
 
 //         <form onSubmit={this.getInput}>
-//           <input name='search' placeholder='Your To Do Here' />
+//           <input name='user' placeholder='Your To Do Here' />
 //           <button className="btn btn-primary" type='submit'>Add to list</button>
 //           <a href="/ToDoList" className="btn btn-primary">Clear List</a>
 //         </form>
