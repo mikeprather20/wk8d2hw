@@ -18,6 +18,12 @@ export default class Nav extends Component {
         <li className="nav-item">
           <Link className="nav-link" to="/Todolist">To Do List</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/Signup">Sign Up</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/Login">Log In</Link>
+        </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             More Here
